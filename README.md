@@ -1,2 +1,2 @@
 # imagec_ui_aum
- Uses OpenCV and Python to draw boxes over images to be used for supervised machine learning. 
+ This program uses OpenCV and Python to draw boxes over images, saves the images in the boxes after applying a smoothing filter to them, for use in computer vision and ML/AI.
