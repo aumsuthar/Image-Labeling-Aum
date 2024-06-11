@@ -7,10 +7,11 @@ import os
 ref_point = []
 text_point = []
 all_boxes = []
+file_index_cropped = 0
 
 def shape_selection(event, x, y, flags, param):
     # grab references to the global variables
-    global ref_point, crop, text_point, all_boxes
+    global ref_point, crop, text_point, all_boxes, file_index_cropped
     # if the left mouse button was clicked, record the starting
     # (x, y) coordinates and indicate that cropping is being performed
     if event == cv2.EVENT_LBUTTONDOWN:
@@ -26,11 +27,17 @@ def shape_selection(event, x, y, flags, param):
         fontscale = 0.35
         thickness = 1
         color = (0, 0, 255) #red
+        x1, y1 = ref_point[0]
+        x2, y2 = ref_point[1]
         # draw a rectangle around the region of interest
         cv2.rectangle(image, ref_point[0], ref_point[1], color, 2)
+        os.chdir('C:\\Users\\suthaa2\\Downloads\\imagec_ui\\labelled_images\\cropped_images')
+        cropped_img = cv2.getRectSubPix(image, (x2-x1, y2-y1), (x1+((x2-x1)/2), y1+((y2-y1)/2)))
+        cv2.imwrite(f"cropped_image_{file_index_cropped}.png", cropped_img)
         cv2.putText(image,"plant", text_point[0], font, fontscale, color, thickness, cv2.LINE_AA, False)
         cv2.imshow("image", image)
-
+        file_index_cropped += 1
+ 
 directory_labelled = 'C:\\Users\\suthaa2\\Downloads\\imagec_ui\\labelled_images'
 file_index = 0
 ul_file_index = 0
@@ -56,11 +63,11 @@ while True:
         print('Image saved.')
         print(os.listdir(directory_labelled))
     if key == ord("n"):
+        ul_file_index += 1
         image = clone.copy()
         image_path = os.path.join(image_dir, image_list[ul_file_index])
         image = cv2.imread(image_path)
         img = image
-        ul_file_index += 1
     if key == ord("r"):
         image = clone.copy()
     # if the 'c' key is pressed, break from the loop
