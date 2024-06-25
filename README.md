@@ -1,6 +1,6 @@
 ## Image Labeling Tool with Python and OpenCV
 
-This Python program utilizes OpenCV for image labeling and is designed for integration into larger projects. Refer to the `make_box.py` file for detailed instructions. This program uses OpenCV and Python to draw boxes over images, saves the images in the boxes after applying a smoothing filter to them, for use in computer vision and ML/AI.
+This Python program utilizes OpenCV for image labeling and is designed for integration into larger projects. Refer to the `make_box.py` file for detailed instructions. This program uses OpenCV and Python to draw boxes over images, saves the images in the boxes after applying a smoothing filter to them, for use in computer vision and ML/AI. The images are taken from the following link: https://www.kaggle.com/datasets/aman2000jaiswal/agriculture-crop-images
 
 **Installation:**
 
@@ -47,3 +47,4 @@ This Python program utilizes OpenCV for image labeling and is designed for integ
 3. **Run the Program:**
 
    Execute `make_box.py` to start the image labeling process.
+
