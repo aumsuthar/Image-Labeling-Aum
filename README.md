@@ -7,9 +7,23 @@ This Python program utilizes OpenCV for image labeling and is designed for integ
 1. Download required libraries using pip:
 
    ```
-   pip install cv2 argparse os Pillow numpy pathlib
+   pip install cv2 
    ```
-
+   ```
+   pip install argparse
+   ```
+   ```
+   pip install os
+   ```
+   ```
+   pip install Pillow
+   ```
+   ```
+   pip install numpy
+   ```
+   ```
+   pip install pathlib
+   ```
 **Usage:**
 
 1. **File Paths:**
