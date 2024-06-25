@@ -33,9 +33,3 @@ This Python program utilizes OpenCV for image labeling and is designed for integ
 3. **Run the Program:**
 
    Execute `make_box.py` to start the image labeling process.
-
-
-**Notes:**
-
-- This description assumes the script is named `make_box.py`.
-- Consider adding a section on ROI (region of interest) functionality if applicable. 
